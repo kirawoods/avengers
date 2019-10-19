@@ -27,16 +27,11 @@ body {
   align-items: center;
 }
 
-.navbar > li > a {
+.navbar-item {
   color: #4285f4;
   text-decoration: none;
   padding: 24px;
   height: 16px;
-}
-
-.navbar > li > a.activeNavButton {
-  background-color: #4285f4;
-  color: white;
 }
 
 .characters-list-wrapper {
@@ -68,7 +63,7 @@ body {
   cursor: pointer;
 }
 
-.character-card > h2 {
+.card-header {
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -76,6 +71,7 @@ body {
   margin-top: 8px;
   font-size: 24px;
   cursor: pointer;
+  text-align: center;
 }
 
 .character-card > p {

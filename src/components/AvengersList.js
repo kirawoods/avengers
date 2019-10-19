@@ -1,4 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const avengers = [
   {
@@ -160,8 +163,10 @@ export const AvengerList = () => {
         <div className="characters-list-wrapper">
           <img className="thumbnail" src={avengerInfo.thumbnail}></img>
           <div className="character-card">
-            <h2>{avengerInfo.name}</h2>
             <div className="character-info-wrapper">
+              <Link to={`/avengers/${avengerInfo.id}`}>
+                <h2 className="card-header">{avengerInfo.name}</h2>
+              </Link>
               <p>Nickname: {avengerInfo.nickname}</p>
               <p>{avengerInfo.description}</p>
               <ul>
