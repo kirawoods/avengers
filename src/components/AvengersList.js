@@ -155,11 +155,25 @@ export const AvengerList = () => {
       <header>
         <h1>Avenger's List</h1>
       </header>
-      <div class="characters-list-wrapper">
-        <div class="character-card">
-          <h2>{avengers[0].name}</h2>
+
+      {avengers.map(avengerInfo => (
+        <div className="characters-list-wrapper">
+          <img className="thumbnail" src={avengerInfo.thumbnail}></img>
+          <div className="character-card">
+            <h2>{avengerInfo.name}</h2>
+            <div className="character-info-wrapper">
+              <p>Nickname: {avengerInfo.nickname}</p>
+              <p>{avengerInfo.description}</p>
+              <ul>
+                {avengerInfo.movies.map(movie => (
+                  <li>{movie}</li>
+                ))}
+              </ul>
+            </div>
+            <img className="character-image" src={avengerInfo.img}></img>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
