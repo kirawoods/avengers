@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const avengers = [
   {
@@ -150,19 +149,25 @@ const avengers = [
   }
 ];
 
-export const AvengerList = () => {
+export const AvengerPage = props => {
+  const avenger = avengers.find(
+    avenger => props.match.params.id === `${avenger.id}`
+  );
   return (
     <div>
-      <header>
-        <h1>Avenger's List</h1>
-      </header>
-      {avengers.map(avengerInfo => (
-        <div className="characters-list-wrapper">
-          <Link to={`/avengers/${avengerInfo.id}`}>
-            <h2 className="card-header">{avengerInfo.name}</h2>
-          </Link>
+      <div className="character-card">
+        <div className="character-info-wrapper">
+          <h2 className="card-header">{avenger.name}</h2>
+          <p>Nickname: {avenger.nickname}</p>
+          <p>{avenger.description}</p>
+          <ul>
+            {avenger.movies.map(movie => (
+              <li>{movie}</li>
+            ))}
+          </ul>
         </div>
-      ))}
+        <img className="character-image" src={avenger.img}></img>
+      </div>
     </div>
   );
 };

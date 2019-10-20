@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { AvengerList } from "./components/AvengersList";
+import { AvengerPage } from "./components/AvengerPage";
 import { Home } from "./components/Home";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
@@ -19,7 +20,8 @@ function App() {
           </Link>
         </div>
         <Route exact path="/" component={Home} />
-        <Route path="/avengers" component={AvengerList} />
+        <Route exact path="/avengers" component={AvengerList} />
+        <Route path="/avengers/:id" component={AvengerPage} />
       </div>
     </Router>
   );
