@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const avengers = [
+export const avengers = [
   {
     id: 1,
     name: "Iron Man",
