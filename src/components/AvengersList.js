@@ -150,7 +150,7 @@ const avengers = [
   }
 ];
 
-export const AvengerList = () => {
+export const AvengerList = props => {
   return (
     <div>
       <header>
@@ -159,7 +159,14 @@ export const AvengerList = () => {
       {avengers.map(avengerInfo => (
         <div className="characters-list-wrapper">
           <Link to={`/avengers/${avengerInfo.id}`}>
-            <h2 className="card-header">{avengerInfo.name}</h2>
+            <h2
+              className="card-header"
+              onClick={() =>
+                props.history.push(`/avengers/${avengers.id}/info`)
+              }
+            >
+              {avengerInfo.name}
+            </h2>
           </Link>
         </div>
       ))}
