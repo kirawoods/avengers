@@ -15,23 +15,23 @@ export const AvengerPage = props => {
         <div className="character-info-wrapper">
           <h2 className="card-header">{avenger.name}</h2>
           <p>Nickname: {avenger.nickname}</p>
-          <p>{avenger.description}</p>
-          <ul>
-            {avenger.movies.map(movie => (
-              <li>{movie}</li>
-            ))}
-          </ul>
+          <div>
+            <Link to={`/avengers/${avenger.id}/info`}>Info</Link>
+          </div>
+          <Route
+            path="/avengers/:id/info"
+            render={() => <AvengerInfo avenger={avenger} />}
+          />
+          <div>
+            <Link to={`/avengers/${avenger.id}/movies`}>Movies</Link>
+          </div>
+          <Route
+            path="/avengers/:id/movies"
+            render={() => <AvengerMovies avenger={avenger} />}
+          />
         </div>
         <img className="character-image" src={avenger.img}></img>
       </div>
-      <Route
-        path="/avengers/:id/details"
-        render={() => <AvengerInfo avenger={avenger} />}
-      />
-      <Route
-        path="/avengers/:id/movies"
-        render={() => <AvengerMovies avenger={avenger} />}
-      />
     </div>
   );
 };
