@@ -6,6 +6,7 @@ import { Home } from "./components/Home";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const avengers = [
   {
@@ -161,12 +162,20 @@ function App() {
     <Router>
       <div className="app-container">
         <div className="navbar">
-          <Link className="navbar-item" to="/">
+          <NavLink
+            className="navbar-item nav-buttons"
+            activeClassName="activeNavButton"
+            to="/"
+          >
             Home
-          </Link>
-          <Link className="navbar-item" to="/avengers">
+          </NavLink>
+          <NavLink
+            className="navbar-item nav-buttons"
+            activeClassName="activeNavButton"
+            to="/avengers"
+          >
             Avenger List
-          </Link>
+          </NavLink>
         </div>
         <Route exact path="/" component={Home} />
         <Route
