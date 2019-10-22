@@ -2,6 +2,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { avengers } from "../App";
+import { AvengerInfo } from "./AvengerDetails";
+import { AvengerMovies } from "./AvengerMovies";
 
 export const AvengerPage = props => {
   const avenger = avengers.find(
@@ -22,14 +24,14 @@ export const AvengerPage = props => {
         </div>
         <img className="character-image" src={avenger.img}></img>
       </div>
-      {/* <Route
+      <Route
         path="/avengers/:id/details"
-        render={() => <AvengerDetails avenger={avenger} />}
+        render={() => <AvengerInfo avenger={avenger} />}
       />
       <Route
         path="/avengers/:id/movies"
         render={() => <AvengerMovies avenger={avenger} />}
-      /> */}
+      />
     </div>
   );
 };
